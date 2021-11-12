@@ -22,6 +22,7 @@ protected:
 	int _width {}, _height {};
 
 	virtual void render() {}
+	virtual void handle_keys(const Uint8 *keys) {}
 public:
 	Window(int width = DEFAULT_WIDTH, int height = DEFAULT_HEIGHT);
 	virtual ~Window() = default;

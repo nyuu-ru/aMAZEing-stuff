@@ -10,14 +10,18 @@
 
 #include "Window.h"
 #include "MazeMap.h"
+#include "Player.h"
+#include <memory>
 
 class MazeWindow: public Window
 {
 protected:
 	static constexpr int CELL_WIDTH = 60;
 	static constexpr int CELL_HEIGHT = 60;
-	MazeMap _map { "map01.txt" };
+	std::shared_ptr<MazeMap> _map;
+	Player player;
 
+	virtual void handle_keys(const Uint8 *keys) override;
 	virtual void render() override;
 
 public:

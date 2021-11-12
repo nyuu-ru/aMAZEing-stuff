@@ -22,7 +22,7 @@ MazeMap::MazeMap(const char *filename)
 	std::string line;
 	std::getline(file, line);
 	std::stringstream config_line { line };
-	config_line >> _width >> _height;
+	config_line >> _width >> _height >> _start_x >> _start_y >> _start_dir;
 	_data.resize(_width * _height);
 
 	for (int row = 0; row < _height; ++row) {

@@ -36,12 +36,14 @@ Window::Window(int width, int height)
 
 void Window::main_loop()
 {
+	auto keys = SDL_GetKeyboardState(nullptr);
 	SDL_Event event;
 	for (;;) {
 		while (SDL_PollEvent(&event)) {
 			if (event.type == SDL_QUIT)
 				return;
 		}
+		handle_keys(keys);
 
 		render();
 		SDL_RenderPresent(_renderer.get());
