@@ -37,6 +37,11 @@ public:
 	void shift_left(double dist = STEP_LENGTH);
 	void turn_right(double angle = TURN_ANGLE);
 	void turn_left(double angle = TURN_ANGLE);
+
+	void move_left(double dist = STEP_LENGTH);
+	void move_right(double dist = STEP_LENGTH);
+	void move_up(double dist = STEP_LENGTH);
+	void move_down(double dist = STEP_LENGTH);
 };
 
 #endif /* PLAYER_H_ */

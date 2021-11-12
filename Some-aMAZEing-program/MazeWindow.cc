@@ -60,4 +60,9 @@ void MazeWindow::handle_keys(const Uint8 *keys)
 	if (keys[SDL_SCANCODE_D]) player.shift_right();
 	if (keys[SDL_SCANCODE_Q]) player.turn_left();
 	if (keys[SDL_SCANCODE_E]) player.turn_right();
+
+	if (keys[SDL_SCANCODE_UP]) player.move_up();
+	if (keys[SDL_SCANCODE_DOWN]) player.move_down();
+	if (keys[SDL_SCANCODE_LEFT]) player.move_left();
+	if (keys[SDL_SCANCODE_RIGHT]) player.move_right();
 }

@@ -59,3 +59,33 @@ void Player::turn_left(double angle)
 	if (_dir < 0)
 		_dir += 2*Pi;
 }
+
+void Player::move_left(double dist)
+{
+	double nx = _x - dist;
+	double ny = _y;
+	if (_map->is_space(nx, ny)) {
+		_x = nx;
+		_y = ny;
+	}
+}
+
+void Player::move_right(double dist)
+{
+	move_left(-dist);
+}
+
+void Player::move_up(double dist)
+{
+	double nx = _x;
+	double ny = _y - dist;
+	if (_map->is_space(nx, ny)) {
+		_x = nx;
+		_y = ny;
+	}
+}
+
+void Player::move_down(double dist)
+{
+	move_up(-dist);
+}
